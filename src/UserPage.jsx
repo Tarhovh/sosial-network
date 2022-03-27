@@ -11,6 +11,7 @@ import Paper from "@mui/material/Paper";
 import CardHeader from "@mui/material/CardHeader";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
+import AccountMenu from "./components/AccountMenu";
 
 function UserPage() {
   
@@ -29,10 +30,11 @@ function UserPage() {
       <Container fixed>
         <CardMedia component="img" height="140" src={Image} />
 
-        <Stack direction="row" alignItems="flex-end" spacing={1}>
-          <Avatar sx={{ bgcolor: deepPurple[500] }}>B</Avatar>
-          <AddAPhotoIcon fontSize="medium" />
-        </Stack>
+        {/* <Stack direction="row" alignItems="flex-end" spacing={1}>
+          <Avatar sx={{ bgcolor: deepPurple[500], width: 120, height: 120, marginTop: 2, }}>B</Avatar>
+          <AddAPhotoIcon fontSize="large" />
+        </Stack> */}
+        <AccountMenu/>
         <CardHeader>
             <Card>
                 aaaaaa
