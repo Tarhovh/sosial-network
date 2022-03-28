@@ -1,16 +1,15 @@
 // import React, { useCallback, useState } from 'react';
-import ImageGallery from 'react-image-gallery';
-import {photos} from '../../images/photos';
-import Card from '@mui/material/Card';
+import React from 'react'
+import  Slider  from '../userPostsComponents/imageSlider/Slider'
 
 function MyGallery () {
 
-    console.dir(ImageGallery)
+
+
     return (
         <>
-<Card>
-        <ImageGallery items={photos} /></Card>
-        
+
+        <Slider/>
       </>
     );
 }
