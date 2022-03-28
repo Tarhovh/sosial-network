@@ -5,10 +5,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Image2 from "../images/lbox-srx4600-left.jpg";
+
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ShareIcon from '@mui/icons-material/Share';
 import ReadMoreOutlinedIcon from '@mui/icons-material/ReadMoreOutlined';
+import Image2 from "../../images/lbox-srx4600-left.jpg";
 
 export default function ImgMediaCard() {
   return (

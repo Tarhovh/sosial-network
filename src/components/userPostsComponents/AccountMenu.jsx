@@ -15,6 +15,7 @@ import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { deepPurple } from "@mui/material/colors";
 import Logout from "@mui/icons-material/Logout";
 
+
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -26,7 +27,7 @@ export default function AccountMenu() {
   };
   return (
     <React.Fragment>
-      <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
+      <Box sx={{ display: "flex", }}>
         <Tooltip title="Account settings">
           <IconButton
             onClick={handleClick}
@@ -35,7 +36,7 @@ export default function AccountMenu() {
             aria-controls={open ? "account-menu" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
-            alignItems="flex-end"
+
           >
             <Avatar
               sx={{
@@ -51,10 +52,10 @@ export default function AccountMenu() {
           </IconButton>
         </Tooltip>
         <Typography sx={{ minWidth: 100, marginLeft: 2, marginRight: 2, fontSize: 22 }}>Taron Hovhannisyan</Typography>
-        <Typography sx={{ minWidth: 350, textAlign: 'center' }}>
+        <Typography sx={{ minWidth: 350,  }}>
          
-         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nisi
-          quos dignissimos facilis beatae.</p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nisi
+          quos dignissimos facilis beatae.
         </Typography>
         {/* <Typography sx={{ minWidth: 100 }}>Friends</Typography>
         <Typography sx={{ minWidth: 100 }}>News Feed</Typography> */}

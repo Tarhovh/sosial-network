@@ -1,17 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import UserPosts from "./components/UserPosts";
+import UserPosts from "../components/UserPosts";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import Stack from "@mui/material/Stack";
 import { deepPurple } from "@mui/material/colors";
-import Image from "./images/maxresdefault.jpg";
+import Image from "../images/maxresdefault.jpg";
 import Paper from "@mui/material/Paper";
 import CardHeader from "@mui/material/CardHeader";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
-import AccountMenu from "./components/AccountMenu";
+import AccountMenu from "../components/userPostsComponents/AccountMenu";
+
 
 function UserPage() {
   
