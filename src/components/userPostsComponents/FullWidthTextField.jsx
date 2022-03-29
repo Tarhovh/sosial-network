@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -55,7 +56,8 @@ export default function FullWidthTextField() {
           maxWidth: "100%",
           marginTop: 5,
         }}
-      >
+      > 
+      <form onSubmit={onSubmit}>
         <FormControl 
         sx={
           {
@@ -63,6 +65,7 @@ export default function FullWidthTextField() {
           }
         }
         >
+         
           <TextField
             // fullWidth
             label="Make Your Post"
@@ -81,7 +84,9 @@ export default function FullWidthTextField() {
           >
             Post
           </Button>
-        </FormControl>
+          </FormControl>
+          </form>
+        
       </Box>
 
       <Box>

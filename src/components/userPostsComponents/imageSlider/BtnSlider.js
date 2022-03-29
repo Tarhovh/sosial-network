@@ -2,9 +2,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./Slider.css";
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
-import Slider from "./Slider";
 
 export default function BtnSlider({ direction, moveSlide }) {
 
