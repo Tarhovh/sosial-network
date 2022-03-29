@@ -12,7 +12,7 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<App />}></Route>
           <Route index element={<Home />} />
-          <Route path="/userProfil" element={<UserPage/>} />
+          <Route path="/userProfil" element={ <UserPage/>} />
         </Routes>
       </BrowserRouter>,
   document.getElementById("root")

@@ -4,7 +4,9 @@ import React from "react";
 import Container from "@mui/material/Container";
 import ImgMediaCard from "./userPostsComponents/ImageMediaCard";
 import FullWidthTextField from "./userPostsComponents/FullWidthTextField";
-import MyGallery from './userPostsComponents/MyGallery '
+import MyGallery from './userPostsComponents/MyGallery ';
+import  store  from '../redux/store';
+import { Provider } from "react-redux";
 
 function UserPosts() {
   return (
@@ -16,7 +18,7 @@ function UserPosts() {
       marginTop: 5,
 
     }}>
-      <FullWidthTextField />
+      <Provider store={store}><FullWidthTextField /></Provider>
       <MyGallery/>
       <ImgMediaCard />
       <ImgMediaCard />

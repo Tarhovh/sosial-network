@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -10,6 +13,18 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ShareIcon from '@mui/icons-material/Share';
 import ReadMoreOutlinedIcon from '@mui/icons-material/ReadMoreOutlined';
 import Image2 from "../../images/lbox-srx4600-left.jpg";
+import { ShareSheet } from 'react-native-share';
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Platform,
+  Linking,
+} from 'react-native';
+
+// import { captureRef } from 'react-native-view-shot';
+import {Share} from 'react-native-share';
 
 export default function ImgMediaCard() {
   return (
