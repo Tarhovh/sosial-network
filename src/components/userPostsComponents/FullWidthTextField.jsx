@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 // import { Paper } from '@mui/material';
 import CardMedia from "@mui/material/CardMedia";
-import { blue, deepPurple, lightBlue, lightGreen } from "@mui/material/colors";
+import { blue, deepPurple, grey, lightBlue, lightGreen } from "@mui/material/colors";
 
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -111,7 +111,7 @@ export default function FullWidthTextField() {
               maxWidth: 500,
               marginTop: 6,
               borderRadius: 8,
-              bgcolor: lightGreen[100],
+              bgcolor: lightGreen ['50'],
             }}
           >
             <CardActions
