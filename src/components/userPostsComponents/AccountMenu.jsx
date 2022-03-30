@@ -27,7 +27,16 @@ export default function AccountMenu() {
   };
   return (
     <React.Fragment>
-      <Box sx={{ display: "flex", }}>
+      <Box 
+      sx={{ 
+        
+        display: 'flex',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'space-around',  
+        marginTop: 5, 
+    }}
+    >
         <Tooltip title="Account settings">
           <IconButton
             onClick={handleClick}
@@ -51,8 +60,8 @@ export default function AccountMenu() {
             <AddAPhotoIcon fontSize="medium" />
           </IconButton>
         </Tooltip>
-        <Typography sx={{ minWidth: 100, marginLeft: 2, marginRight: 2, fontSize: 22 }}>Taron Hovhannisyan</Typography>
-        <Typography sx={{ minWidth: 350,  }}>
+        <Typography gutterBottom variant="h5" sx={{ width: '25%'}}>Name Surname</Typography>
+        <Typography sx={{ width: '50%'}}>
          
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nisi
           quos dignissimos facilis beatae.

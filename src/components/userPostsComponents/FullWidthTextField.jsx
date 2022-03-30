@@ -7,12 +7,12 @@ import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 // import { Paper } from '@mui/material';
 import CardMedia from "@mui/material/CardMedia";
+import { deepPurple, lightBlue } from "@mui/material/colors";
 
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { Input } from '@mui/material';
-import Image3 from "../../images/1.jpg";
-import profpic from "../../images/profil1.jpg";
+// import profpic from "../../images/profil1.jpg";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -21,6 +21,7 @@ import Typography from "@mui/material/Typography";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ShareIcon from "@mui/icons-material/Share";
 import ReadMoreOutlinedIcon from "@mui/icons-material/ReadMoreOutlined";
+import { Avatar } from "@mui/material";
 
 export default function FullWidthTextField() {
   const todos = useSelector(function (state) {
@@ -60,7 +61,7 @@ export default function FullWidthTextField() {
     <>
       <Box
         sx={{
-          width: 500,
+          width: 700,
           maxWidth: "100%",
           marginTop: 5,
         }}
@@ -93,7 +94,7 @@ export default function FullWidthTextField() {
         </form>
       </Box>
 
-      <Box>
+
         {/* <form 
 // onSubmit={onSubmit}
 
@@ -103,10 +104,32 @@ export default function FullWidthTextField() {
           ></input>
           <button>Add</button>
           </form> */}
-
-        <div>
+<Box>
+        <Box
+         sx={{ 
+        
+          display: 'flex',
+          flexDirection: 'column',
+          width: '700',
+          alignItems: 'center',
+          justifyContent: 'center',  
+          marginTop: 5,
+      }}
+        >
           {todos?.map((todo) => (
-            <Card sx={{ maxWidth: 500, marginTop: 5 }} key={todo.id}>
+            <Card key={todo.id} 
+            sx={{ 
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center', 
+              maxWidth: 500, 
+              marginTop: 5,
+              bgcolor: lightBlue[100],
+
+            }} 
+            
+            >
               <CardMedia
                 // image={Image3}
                 sx={{
@@ -119,16 +142,49 @@ export default function FullWidthTextField() {
                   alignItems: "center",
                   justifyContent: "center",
                   textAlign: "center",
-                  backgroundColor: "lightBlue",
+                  bgcolor: lightBlue[600],
                 }}
               >
-                <img src={profpic} alt="sss" style={imgStyle} />
+               <CardMedia
+               sx={{
+                 display: 'flex',
+                 justifyContent: 'space-between',
+                 alignItems: 'center',
+                 width: '100%',
+                 marginTop: 3,
+                 marginLeft: 3
+               }}
+               >
+                <Avatar
+              sx={{
+                bgcolor: deepPurple[700],
+                width: 85,
+                height: 85,
+
+              }}
+            >
+              B
+            </Avatar>
+
+            <Typography gutterBottom variant="h5" 
+            
+            sx={{ width: '100%'}}
+            
+            >Name Surname</Typography>
+            </CardMedia>
 
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
                     {todo.text}
                   </Typography>
-                  <Typography gutterBottom variant="h6" component="div" >©MyNetwork</Typography>
+                  <Typography gutterBottom variant="h6" component="div" 
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                    justifyContent: 'flex-end',
+                    marginTop: 5
+                  }}
+                  >©MyNetwork</Typography>
                 </CardContent>
               </CardMedia>
               <CardActions>
@@ -141,8 +197,8 @@ export default function FullWidthTextField() {
               </CardActions>
             </Card>
           ))}
-        </div>
-      </Box>
+        </Box>
+        </Box>
     </>
   );
 }
