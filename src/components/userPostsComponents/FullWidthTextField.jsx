@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 // import { Paper } from '@mui/material';
 import CardMedia from "@mui/material/CardMedia";
-import { deepPurple, lightBlue } from "@mui/material/colors";
+import { blue, deepPurple, lightBlue, lightGreen } from "@mui/material/colors";
 
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -55,8 +55,6 @@ export default function FullWidthTextField() {
     marginBottom: 50,
   };
 
-  // console.dir(Paper)
-
   return (
     <>
       <Box
@@ -73,20 +71,18 @@ export default function FullWidthTextField() {
             }}
           >
             <TextField
-              // fullWidth
+              fullWidth
               label="Make Your Post"
               id="fullWidth"
               value={text}
               onChange={handleChange}
             />
 
-            {/* <Input defaultValue={text} onChange={handleChange}/> */}
             <Button
               type="submit"
               variant="contained"
               // endIcon={<SendIcon />}
               onClick={onSubmit}
-              // fullWidth='false'
             >
               Post
             </Button>
@@ -94,111 +90,104 @@ export default function FullWidthTextField() {
         </form>
       </Box>
 
-
-        {/* <form 
-// onSubmit={onSubmit}
-
->
-          <input type="text" 
-          // value={text} onChange={handleChange}
-          ></input>
-          <button>Add</button>
-          </form> */}
-<Box>
+      {todos?.map((todo) => (
         <Box
-         sx={{ 
-        
-          display: 'flex',
-          flexDirection: 'column',
-          width: '700',
-          alignItems: 'center',
-          justifyContent: 'center',  
-          marginTop: 5,
-      }}
+          key={todo.id}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "700",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: 5,
+            marginBottom: 5,
+          }}
         >
-          {todos?.map((todo) => (
-            <Card key={todo.id} 
-            sx={{ 
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center', 
-              maxWidth: 500, 
-              marginTop: 5,
-              bgcolor: lightBlue[100],
-
-            }} 
-            
-            >
-              <CardMedia
-                // image={Image3}
-                sx={{
-                  // backgroundImage: Image3,
-                  display: "flex",
-                  flexDirection: "column",
-                  width: 500,
-                  height: 500,
-                  marginTop: 5,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  textAlign: "center",
-                  bgcolor: lightBlue[600],
-                }}
-              >
-               <CardMedia
-               sx={{
-                 display: 'flex',
-                 justifyContent: 'space-between',
-                 alignItems: 'center',
-                 width: '100%',
-                 marginTop: 3,
-                 marginLeft: 3
-               }}
-               >
-                <Avatar
+          <Card
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              maxWidth: 500,
+              marginTop: 6,
+              borderRadius: 8,
+              bgcolor: lightGreen[100],
+            }}
+          >
+            <CardActions
               sx={{
-                bgcolor: deepPurple[700],
-                width: 85,
-                height: 85,
-
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center",
+                width: "100%",
               }}
             >
-              B
-            </Avatar>
+              <Avatar
+                sx={{
+                  bgcolor: blue[600],
+                  width: 85,
+                  height: 85,
+                }}
+              >
+                {"Photo"}
+              </Avatar>
 
-            <Typography gutterBottom variant="h5" 
-            
-            sx={{ width: '100%'}}
-            
-            >Name Surname</Typography>
-            </CardMedia>
+              <Typography gutterBottom variant="h5" sx={{ width: "50%" }}>
+                Name Surname
+              </Typography>
+            </CardActions>
 
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {todo.text}
-                  </Typography>
-                  <Typography gutterBottom variant="h6" component="div" 
+            <CardMedia
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: 500,
+                minHeight: 300,
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                borderRadius: 5,
+              }}
+            >
+              <CardContent>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="div"
                   sx={{
-                    display: 'flex',
-                    alignItems: 'flex-end',
-                    justifyContent: 'flex-end',
-                    marginTop: 5
+                    display: "flex",
+                    justifySelf: "center",
                   }}
-                  >©MyNetwork</Typography>
+                >
+                  {todo.text}
+                </Typography>
                 </CardContent>
-              </CardMedia>
-              <CardActions>
-                <Button variant="contained" endIcon={<ShareIcon />}></Button>
-                <Button
-                  variant="contained"
-                  endIcon={<ReadMoreOutlinedIcon />}
-                ></Button>
-                <Button variant="contained" endIcon={<ThumbUpIcon />}></Button>
-              </CardActions>
-            </Card>
-          ))}
+                <CardContent 
+                 sx={{
+                  display: "flex",
+                  width: '90%',
+                  justifyContent: "flex-end",
+                  alignItems: 'flex-end',
+                  justifySelf: "flex-end",
+                }}
+                >
+                <Typography gutterBottom variant="h6" component="div">
+                  ©MyNetwork
+                </Typography>
+                </CardContent>
+              
+            </CardMedia>
+            <CardActions>
+              <Button variant="contained" endIcon={<ShareIcon />}></Button>
+              <Button
+                variant="contained"
+                endIcon={<ReadMoreOutlinedIcon />}
+              ></Button>
+              <Button variant="contained" endIcon={<ThumbUpIcon />}></Button>
+            </CardActions>
+          </Card>
         </Box>
-        </Box>
+      ))}
     </>
   );
 }
