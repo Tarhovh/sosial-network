@@ -7,7 +7,13 @@ import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 // import { Paper } from '@mui/material';
 import CardMedia from "@mui/material/CardMedia";
-import { blue, deepPurple, grey, lightBlue, lightGreen } from "@mui/material/colors";
+import {
+  blue,
+  deepPurple,
+  grey,
+  lightBlue,
+  lightGreen,
+} from "@mui/material/colors";
 
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,7 +27,7 @@ import Typography from "@mui/material/Typography";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ShareIcon from "@mui/icons-material/Share";
 import ReadMoreOutlinedIcon from "@mui/icons-material/ReadMoreOutlined";
-import { Avatar } from "@mui/material";
+import { Avatar, TextareaAutosize } from "@mui/material";
 
 export default function FullWidthTextField() {
   const todos = useSelector(function (state) {
@@ -55,6 +61,8 @@ export default function FullWidthTextField() {
     marginBottom: 50,
   };
 
+  console.dir(TextField);
+
   return (
     <>
       <Box
@@ -71,6 +79,8 @@ export default function FullWidthTextField() {
             }}
           >
             <TextField
+              multiline
+              rows={2}
               fullWidth
               label="Make Your Post"
               id="fullWidth"
@@ -111,7 +121,7 @@ export default function FullWidthTextField() {
               maxWidth: 500,
               marginTop: 6,
               borderRadius: 8,
-              bgcolor: lightGreen ['50'],
+              bgcolor: lightGreen["50"],
             }}
           >
             <CardActions
@@ -161,21 +171,20 @@ export default function FullWidthTextField() {
                 >
                   {todo.text}
                 </Typography>
-                </CardContent>
-                <CardContent 
-                 sx={{
+              </CardContent>
+              <CardContent
+                sx={{
                   display: "flex",
-                  width: '90%',
+                  width: "90%",
                   justifyContent: "flex-end",
-                  alignItems: 'flex-end',
+                  alignItems: "flex-end",
                   justifySelf: "flex-end",
                 }}
-                >
+              >
                 <Typography gutterBottom variant="h6" component="div">
                   ©MyNetwork
                 </Typography>
-                </CardContent>
-              
+              </CardContent>
             </CardMedia>
             <CardActions>
               <Button variant="contained" endIcon={<ShareIcon />}></Button>
