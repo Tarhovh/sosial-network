@@ -53,14 +53,6 @@ export default function FullWidthTextField() {
     setText("");
   };
 
-  const imgStyle = {
-    width: "80px",
-    height: "80px",
-    display: "flex",
-    placeSelf: "center",
-    marginBottom: 50,
-  };
-
   console.dir(TextField);
 
   return (
@@ -72,7 +64,9 @@ export default function FullWidthTextField() {
           marginTop: 5,
         }}
       >
-        <form onSubmit={onSubmit}>
+        <form 
+        // onSubmit={onSubmit}
+        >
           <FormControl
             sx={{
               width: "100%",
@@ -91,6 +85,7 @@ export default function FullWidthTextField() {
             <Button
               type="submit"
               variant="contained"
+              disabled={!text}
               // endIcon={<SendIcon />}
               onClick={onSubmit}
             >
@@ -164,27 +159,27 @@ export default function FullWidthTextField() {
                   gutterBottom
                   variant="h5"
                   component="div"
-                  sx={{
-                    display: "flex",
-                    justifySelf: "center",
-                  }}
+                  // sx={{
+                  //   display: "flex",
+                  //   // justifySelf: "center",
+                  // }}
                 >
                   {todo.text}
                 </Typography>
               </CardContent>
-              <CardContent
+            {/* <CardContent
                 sx={{
                   display: "flex",
-                  width: "90%",
+                  width: "100%",
                   justifyContent: "flex-end",
                   alignItems: "flex-end",
                   justifySelf: "flex-end",
                 }}
               >
-                <Typography gutterBottom variant="h6" component="div">
+               <Typography gutterBottom variant="h6" component="div">
                   ©MyNetwork
-                </Typography>
-              </CardContent>
+                </Typography> 
+              </CardContent> */}
             </CardMedia>
             <CardActions>
               <Button variant="contained" endIcon={<ShareIcon />}></Button>
