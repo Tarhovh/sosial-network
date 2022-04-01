@@ -2,29 +2,19 @@
 /* eslint-disable no-undef */
 import React from "react";
 import Container from "@mui/material/Container";
-import ImgMediaCard from "./userPostsComponents/ImageMediaCard";
-import FullWidthTextField from "./userPostsComponents/FullWidthTextField";
-import MyGallery from './userPostsComponents/MyGallery ';
-import  store  from '../redux/store';
-import { Provider } from "react-redux";
+import AddNewPostForm from "./Forms/AddNewPostForm";
+import Posts from "./Posts/Posts";
 
 function UserPosts() {
   return (
     <Container sx={{
-      // display: 'flex',
-      // flexDirection: 'column',
       width: '700px',
       maxWidth: '100%',
       marginTop: 5,
 
     }}>
-      <Provider store={store}><FullWidthTextField /></Provider>
-      <MyGallery/>
-      <ImgMediaCard />
-      <ImgMediaCard />
-      <ImgMediaCard />
-      <ImgMediaCard />
-      <ImgMediaCard />
+      <AddNewPostForm/>
+      <Posts />
     </Container>
   )
 }

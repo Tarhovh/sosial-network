@@ -1,12 +1,22 @@
-import { createStore } from "redux";
-import { todos, todosReducer } from "../components/userPostsComponents/todosSlice";
+import { configureStore } from "@reduxjs/toolkit";
 
+import reducer from "./features";
 
-const store = createStore( todosReducer, todos)
+console.log(reducer);
 
-// console.log(store.getState());
+const store = configureStore({ reducer });
+
+store.subscribe(() => console.log(store.getState()));
 
 export default store;
+
+// import { createStore } from "redux";
+// import { todos, todosReducer } from "./features/posts.feature";
+// const store = createStore( todosReducer, todos)
+
+// // console.log(store.getState());
+
+// export default store;
 
 // function saveToLocalStorage(state) {
 //   try {
